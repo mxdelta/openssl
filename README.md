@@ -8,3 +8,6 @@ openssl pkcs12 -info -in cert.pfx -noout
       https://github.com/crackpkcs12/crackpkcs12.git
       ./configure 
       
+---------перевод  pfx в pem
+
+openssl pkcs12 -in cert.pfx -out cert.pem -nokeys
