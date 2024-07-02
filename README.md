@@ -15,3 +15,7 @@ openssl pkcs12 -info -in cert.pfx -noout
 ---------перевод  pfx в pem
 
 openssl pkcs12 -in cert.pfx -out cert.pem -nokeys
+
+#Загрузить сертификат
+
+$cert = import-pfxCertificate -FilePath '$RLYS3KF.pfx' -Password $pass -CertStoreLocation Cert:\CurrentUser\My
