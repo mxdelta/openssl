@@ -21,3 +21,9 @@ openssl pkcs12 -in cert.pfx -out cert.pem -nokeys
             $pass = convertTo-Securestring -string 'abceasyas123' -asplaintext -force
 
             $cert = import-pfxCertificate -FilePath '$RLYS3KF.pfx' -Password $pass -CertStoreLocation Cert:\CurrentUser\My
+
+# Подписать файл сертификатом 
+
+            Set-AuthenticodeSignature -FilePath Get-bADpasswords.ps1 -Certificate $cert
+
+# 
